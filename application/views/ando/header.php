@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('Eiits! Jangan coba coba Mblo!!!!');
 <!DOCTYPE html>
 <html lang="id-ID" prefix="og: http://ogp.me/ns#">
 <head>
-	<title><?php echo $informasi["title"] ?></title>
+  <title><?php echo $informasi["title"] ?></title>
 
      <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,9 +27,9 @@ defined('BASEPATH') OR exit('Eiits! Jangan coba coba Mblo!!!!');
 <?php } ?>
 
 
-	<link rel='shortcut icon' href='<?php echo $informasi['favicon'] ?>' />	
-	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css' />
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css' />
+  <link rel='shortcut icon' href='<?php echo $informasi['favicon'] ?>' /> 
+  <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css' />
+  <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css' /> -->
 
   <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
   <link rel="stylesheet" href="<?php echo assets_url('css/slick/slick.css') ?>"> 
@@ -42,20 +42,22 @@ defined('BASEPATH') OR exit('Eiits! Jangan coba coba Mblo!!!!');
   <link rel="stylesheet" href="<?php echo assets_url('css/bootsnav.css') ?>">
   <link rel="stylesheet" href="<?php echo assets_url('css/style.css') ?>">
   <link rel="stylesheet" href="<?php echo assets_url('css/responsive.css') ?>">
-
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 
 
    <script src="<?php echo assets_url('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js') ?>"></script>
 
 
 
-	<style type="text/css">
-		<?php echo $informasi["custom_css"]; ?>
+  <style type="text/css">
+    <?php echo $informasi["custom_css"]; ?>
     .my_images img {width: 20px; height:20px}
-	</style>
+  </style>
 
 
-	
+  
 
 
 
@@ -204,13 +206,15 @@ $menuPertama->ambil_menu(1); //angka 1 adalah ID menu horizontal
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                             <i class="fa fa-bars"></i>
                         </button>
-                        <a class="navbar-brand" href="#brand">
+                        <a class="navbar-brand" href="<?php echo site_url() ?>">
                            
-                            <img src="<?php echo $informasi["logo"]; ?>" class="my_images" style="width:160px; height:46px;" alt="" >
+                           <img src="<?php echo $informasi["logo"]; ?> " class="logo hidden-xs visible-md-block visible-lg-block"  alt=""  style='width:240px;height:48px;'> </a>
+                           <h2 class="text-danger visible-xs hidden-md-block hidden-lg-block" style="margin-top:-45px"><img src="<?php echo $informasi["logo"]; ?> " class="logo "  alt=""  style='width:120px;height:24px;'> </a></h2>
                             <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
-                        </a>
 
                     </div>
+
+                   
                     <!-- End Header Navigation -->
 
                     <!-- navbar menu -->
@@ -237,6 +241,8 @@ $menuPertama->ambil_menu(1); //angka 1 adalah ID menu horizontal
         ==================================== -->
 
 
+
+
 <main class="site-content" role="main">
 
 <?php
@@ -244,9 +250,9 @@ $menuPertama->ambil_menu(1); //angka 1 adalah ID menu horizontal
 //jika bukan halaman Home
 if($informasi["current_page"]!='home'){
 
-  // echo "<div class='section' id='main-konten'>";
-  // echo "<div class='container'>";
-  // echo "<div class='row'>";
+  echo "<div class='section' id='main-konten'>";
+
+  echo "<div class='row'>";
 }
 
 ?>

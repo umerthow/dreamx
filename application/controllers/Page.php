@@ -36,7 +36,7 @@ class Page extends AN_Apricot
 
 		$this->load->view($this->tema."/header",$data);
 		$this->load->view($this->tema."/page",$data);
-		$this->load->view($this->tema."/footer",$data);
+		$this->load->view($this->tema."/footer_page",$data);
 
 
 
@@ -51,6 +51,18 @@ class Page extends AN_Apricot
 
 	function all_hightligh(){
 		$data["semua_halaman"]=$this->pages->pages_semua();
+	}
+
+
+	function contact_us(){
+
+		$data=$this->public_data;
+	
+		$this->load->view($this->tema."/header",$data);
+		$this->load->view($this->tema."/contact_us",$data);
+		$this->load->view($this->tema."/footer",$data);
+
+
 	}
 
 }

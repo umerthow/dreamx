@@ -24,7 +24,13 @@ class Biodata extends CI_Model {
 				"foto"=>$row->foto,
 				"deskripsi_singkat"=>$row->deskripsi_singkat,
 				"deskripsi"=>reversequote($row->deskripsi,"all"),
-				"link_fb"=>$row->link_fb
+				"link_fb"=>$row->link_fb,
+				"link_insta" => $row->link_insta,
+				"link_twitter" => $row->link_twitter,
+				"link_linkedin" => $row->link_linkedin,
+				"alamat" => $row->alamat,
+				"email" => $row->email,
+				"telp" => $row->telp
 				);
 		}
 	}

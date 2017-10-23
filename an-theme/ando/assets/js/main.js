@@ -38,6 +38,18 @@ jQuery(document).ready(function ($) {
     });
     wow.init();
 
+
+
+//counter
+
+
+        $('.counter').counterUp({
+            delay: 10,
+            time: 1000
+        });
+
+
+
 // magnificPopup
 
     $('.popup-img').magnificPopup({
@@ -74,8 +86,8 @@ jQuery(document).ready(function ($) {
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: true,
-        prevArrow: "<i class='icon icon-chevron-left nextprevleft'></i>",
-        nextArrow: "<i class='icon icon-chevron-right nextprevright'></i>",
+        // prevArrow: "<i class='icon icon-chevron-left nextprevleft'></i>",
+        // nextArrow: "<i class='icon icon-chevron-right nextprevright'></i>",
         autoplay: true,
         autoplaySpeed: 2000
     });
@@ -105,6 +117,4 @@ jQuery(document).ready(function ($) {
     //End
 
 });
-
-
 

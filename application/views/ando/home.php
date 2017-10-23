@@ -1,4 +1,6 @@
-<section id="home" class="home bg-black fix">
+  <!--Home Sections-->
+
+            <section id="home" class="home bg-black fix">
                 <div class="overlay"></div>
                 <div class="container">
                     <div class="row">
@@ -6,31 +8,30 @@
                             <div class="col-md-12">
 
                                 <div class="hello_slid">
-                                    <div class="slid_item">
-                                        <div class="home_text ">
-                                            <h2 class="text-white">We are at <b><span class="text-black">Dream</span><span class="text-danger">axtion</span></b></h2>
-                                            <h1 class="text-white">Starting a new journey!!</h1>
-                                            <h3 class="text-white">- Use one system across your entire company’s HC cycle -</h3>
-                                        </div>
 
-                                        <div class="home_btns m-top-40">
-                                            <a href="#feature" class="btn btn-primary m-top-20">Try Now</a>
-                                            <a href="" class="btn btn-default m-top-20">Learn more</a>
-                                        </div>
-                                    </div><!-- End off slid item -->
-                                    <div class="slid_item">
-                                        <div class="home_text ">
-                                            <h2 class="text-white">Business  <strong>Overview</strong></h2>
-                                            <h1 class="text-white">Our business model is to help others </h1>
-                                            <h3 class="text-white">- Giving complete and consistent employee <strong>experience</strong> -</h3>
-                                        </div>
 
-                                        <div class="home_btns m-top-40">
-                                            <a href="" class="btn btn-primary m-top-20">Try Now</a>
-                                             <a href="" class="btn btn-default m-top-20">Learn more</a>
-                                        </div>
-                                    </div><!-- End off slid item -->
-                                    
+                                    <?php
+
+                                    $banner_hitung=0;
+                                    foreach ($banner_depan as $key => $value) {
+                                        echo "<div class='slid_item'>";
+                                            echo "<div class='home_text'>";
+                                                 echo"<h1 class='text-white'>$value[header]</h1>";
+                                                 echo"<h3 class='text-white'>$value[caption]</h3>";
+                                            echo"</div>";
+
+                                            echo "<div class='home_btns m-top-40'>";
+                                                        echo"<a href='$value[link_href]' class='btn btn-primary m-top-20'>$value[link_text]</a>";
+                                                        echo"<a href='' class='btn btn-default m-top-20'>Learn more</a>";
+                                            echo "</div>";
+                                               
+                                        echo "</div>";
+                                        $banner_hitung++;
+                                    }
+
+                                     ?>
+
+
                                 </div>
                             </div>
 
@@ -105,46 +106,62 @@
 
             <section id="feature" class="section-padding wow fadeIn delay-05s">
               <div class="container">
+             
                 <div class="row">
-                 <div class="main_features fix roomy-70">
-                  <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="wrap-item text-center">
-                      <div class="item-img">
-                        <img src="http://localhost/dreamx/an-component/media/upload-gambar-pendukung/ser01.png">
-                      </div>
-                      <h3 class="pad-bt15">Agile (SCRUM)</h3>
-                      <p>Adjust your human capital system or organization design in respond to customer, employee, market, or user needs..</p>
-                    </div>
+                 <div class="main_features fix roomy-40">
+                 <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="head_title text-center fix">
+                                    
+                                     <h2 class="text-uppercase"> Why you must be our partner</h2>
+                                    
+                                </div>
+                            </div>
+
+               <?php
+
+                if( !empty($section1) ) {
+                        foreach ($section1 as $key => $value) { ?>
+                          <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="wrap-item text-center">
+                              <div class="item-img">
+                                <img src="<?php echo $value['picture'] ?>">
+                              </div>
+                              <h3 class="pad-bt15"><?php echo $value['caption_title'] ?></h3>
+                              <p><?php echo $value['caption_item'] ?></p>
+                            </div>
+                          </div>
+                        <?php } ?>
+                <?php } ?>
+
+                  <div class="m-top-20 wow bounceInDown delay-05s" >
+                  
+                                   
+                                    <div class="col-md-12 m-top-40">
+                                   
+                                  
+                                        <div class="business_items text-center">
+                                            <div class="business_item">
+                                                 
+                                              <p class="roomy-20" style="font-size:16px;"><i style="font-size:20px; padding:15px;padding-bottom:40px;" class="text- fa fa-quote-left text-success" ></i>  Adjust your human capital system or organization design in respond to customer, employee, market, or user needs <i style="font-size:20px; padding:15px;" class="text- fa fa-quote-right text-success" ></i></p>
+                                               
+                                            </div>
+
+                                            <div class="business_item">
+                                                <p class="roomy-20" style="font-size:16px;"><i style="font-size:20px; padding:15px;" class="text- fa fa-quote-left text-success" ></i>  No more scattered data or software fatigue. Easily recruit, develop, manage, and retain your people using a single (HCM) System  <i style="font-size:20px; padding:15px;" class="text- fa fa-quote-right text-success" ></i></p>
+                                                
+                                            </div>
+
+                                            
+                                                
+                                                
+                                           
+                                        </div>
+                                
+                            </div>
                   </div>
-                  <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="wrap-item text-center">
-                      <div class="item-img">
-                        <img src="http://localhost/dreamx/an-component/media/upload-gambar-pendukung/ser02.png">
-                         <!-- <h1><i class="icon icon-adjustments"></i></h1> -->
-                      </div>
-                      <h3 class="pad-bt15">Integrated</h3>
-                      <p>No more scattered data or software fatigue. Easily recruit, develop, manage, and retain your people using a single Human Capital Management (HCM) Syst.</p>
-                    </div>
-                  </div>
-                  <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="wrap-item text-center">
-                      <div class="item-img">
-                        <img src="http://localhost/dreamx/an-component/media/upload-gambar-pendukung/ser03.png">
-                      </div>
-                      <h3 class="pad-bt15">Predictive</h3>
-                      <p>Data  drivendecision  making  by  using  predictive  analytics  to  gain  insight,  predict  trends, analyst cost, and behavior patterns..</p>
-                    </div>
-                  </div>
-                  <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="wrap-item text-center">
-                      <div class="item-img">
-                        <img src="http://localhost/dreamx/an-component/media/upload-gambar-pendukung/ser04.png">
-                      </div>
-                      <h3 class="pad-bt15">Secure</h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                  </div>
+
                 </div>
+
                </div>
               </div>
             </section>
@@ -200,7 +217,7 @@
                     <div class="row">                        
                         <div class="main_test fix">
 
-                            <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-md-12 col-sm-12 col-xs-12 wow fadeIn delay-05s">
                                 <div class="head_title text-center fix">
                                     <h2 class="text-uppercase">Backed by Science</h2>
                                     <h5>Clean and Modern HC design is our best specialist</h5>
@@ -210,11 +227,11 @@
                             <div class="col-md-6">
                                 <div class="test_item fix">
                                     <div class="item_img">
-                                        <img class="img-circle" src="http://localhost/dreamx/an-component/media/upload-gambar-pendukung/test-img1.jpg" alt="" />
+                                        <img class="img-circle wow bounceInLeft" src="http://localhost/dreamx/an-component/media/upload-gambar-pendukung/orange.png" alt="" />
                                         <i class="fa fa-quote-left"></i>
                                     </div>
 
-                                    <div class="item_text">
+                                    <div class="item_text wow rollIn center">
                                         <h5>(Orange, 2016)</h5>
                                         <h6>orangehrm.com</h6>
 
@@ -226,11 +243,11 @@
                             <div class="col-md-6">
                                 <div class="test_item fix sm-m-top-30">
                                     <div class="item_img">
-                                        <img class="img-circle" src="http://localhost/dreamx/an-component/media/upload-gambar-pendukung/test-img2.jpg" alt="" />
+                                        <img class="img-circle wow bounceInRight" src="http://localhost/dreamx/an-component/media/upload-gambar-pendukung/forbes.png" alt="" />
                                         <i class="fa fa-quote-left"></i>
                                     </div>
 
-                                    <div class="item_text">
+                                    <div class="item_text wow rollIn center">
                                         <h5>(Forbes, 2016)</h5>
                                         <h6>forbes.com</h6>
 
@@ -244,6 +261,10 @@
             </section><!-- End off test section -->
 
 
+
+
+
+
             <section id="empower" class=" bg-black fix">
                   <div class="container">
                     <div class="row">
@@ -252,23 +273,23 @@
                     
                        
 
-                        <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="col-md-4 col-sm-6 col-xs-12 wowme fadeIn">
                           <div class="service-item text-center">
-                             <h2><span>36 %</span></h2>
+                             <h2><span id="cost1" class="counter">36 </span><span>%</span></h2>
                             <p>Cost Reduction.</p>
                             
                           </div>
                         </div>
                         <div class="col-md-4 col-sm-6 col-xs-12">
                           <div class="service-item text-center">
-                             <h2><span>19 %</span></h2>
+                             <h2><span id="cost2" class="counter">19 </span><span>%</span></h2>
                             <p>Increace Preformance.</p>
                             
                           </div>
                         </div>
                         <div class="col-md-4 col-sm-6 col-xs-12">
                           <div class="service-item text-center">
-                             <h2><span>23 %</span></h2>
+                             <h2><span id="cost3" class="counter">23 </span><span>%</span></h2>
                             <p>Service team dreacease.</p>
                          
                           </div>
@@ -280,7 +301,7 @@
 
 
 
-            <section id="service" class="features bg-grey">
+           <!--  <section id="service" class="features bg-grey">
                 <div class="container">
                     <div class="row">
                
@@ -336,59 +357,42 @@
                         </div>
                     </div>
                
-            </section>
+            </section> -->
+
+  <!-- End off Brand section -->
 
 
             <!--Business Section-->
-            <section id="business" class="business bg-white roomy-70">
+            <section id="business" class="lightbg business roomy-70">
                 <div class="container">
                     <div class="row">
                         <div class="main_business">
-                            <div class="col-md-6">
-                                <div class="business_slid">
-                                    <div class="slid_shap bg-grey"></div>
-                                    <div class="business_items text-center">
-                                        <div class="business_item">
-                                            <div class="business_img">
-                                                <img src="http://localhost/dreamx/an-component/media/upload-gambar-pendukung/about-img1.jpg" alt="" />
-                                            </div>
-                                        </div>
-
-                                        <div class="business_item">
-                                            <div class="business_img">
-                                                <img src="http://localhost/dreamx/an-component/media/upload-gambar-pendukung/about-img1.jpg" alt="" />
-                                            </div>
-                                        </div>
-
-                                        <div class="business_item">
-                                            <div class="business_img">
-                                                <img src="http://localhost/dreamx/an-component/media/upload-gambar-pendukung/about-img1.jpg" alt="" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="business_item sm-m-top-50">
-                                    <h2 class="text-uppercase"><strong>Our</strong> Business Overview</h2>
+                                    <h2 class="text-uppercase text-center"><strong>Our</strong> Business Overview</h2>
                                    <!--  <ul>
                                         <li><i class="fa fa-arrow-circle-right"></i> Higher Purposes </li>
                                         <li><i class="fa  fa-arrow-circle-right"></i> Customer & Quality Focuses </li>
                                         <li><i class="fa  fa-arrow-circle-right"></i> Team Values </li>
                                         <li><i class="fa  fa-arrow-circle-right"></i> Growth Mindset  </li>
-                                    </ul> -->
-                                     <ul>
-                                        <li><i class="fa fa-arrow-circle-right"></i>Hire from various source such as internal organization, career site, and even social media </li>
-                                        <li><i class="fa  fa-arrow-circle-right"></i>Collaborate easily  </li>
-                                        <li><i class="fa  fa-arrow-circle-right"></i>Easy offering process based on your organization policy </li>
-                                        <li><i class="fa  fa-arrow-circle-right"></i>Using statistic method to find the best person-job fit  </li>
-                                    </ul>
-                                    <p class="m-top-20">We at Dreamaxtion believe that life is too short to work at meaningless job. We are looking for people who have a big dream, passion, and purpose to help others. Design a solution that has a meaningfull impact to other people life. </p>
-
-                                    <div class="business_btn">
-                                        <a href="https://bootstrapthemes.co" class="btn btn-default m-top-20">Read More</a>
-                                        <a href="" class="btn btn-primary m-top-20">Try Now</a>
+                                    <<div class="col-md-12"> -->
+                                        <div class="col-md-12 roomy-20">
+                                            
+                                        <?php  if( !empty($section4) ) {
+                                            foreach ($section4 as $key => $value) { ?>
+                                            <div class="col-md-4 col-sm-6 col-xs-12" style="border-right:1px solid #ccc;">
+                                                <div class="wrap-item text-center">
+                                                  <div class="item-img roomy-20">
+                                                    <img src="http://localhost/dreamx/an-component/media/upload-gambar-pendukung/ser01.png">
+                                                  </div>
+                                                  <h3 class="pad-bt15"><?php echo $value['caption_title'] ?></h3>
+                                                  <p><?php echo $value['caption_item'] ?></p>
+                                                </div>
+                                            </div>
+                                              
+                                            <?php } ?>
+                                        <?php } ?>
+                                        </div>
                                     </div>
 
                                 </div>
@@ -399,51 +403,89 @@
             </section><!-- End off Business section -->
 
 
-
-
-
-            <section id="techno" class="brand fix roomy-40 bg-red">
+<section id="techno" class="brand fix roomy-40 bg-white">
                 <div class="container">
                     <div class="row">
                    
                        
-                        <div class="main_brand text-center">
-                        <h4 class="text-success">Our Technology</h4>
+                        <div class=" text-center">
+                        <h2 class="text-success"> 
+                                        <i class="icon icon-technology-11"></i>
+                                    Our Technology</h2>
 
                             <div class="col-md-2 col-sm-4 col-xs-6">
-                                <div class="brand_item sm-m-top-20">
-                                    <img src="assets/images/cbrand-img1.png" alt="" />
+                                <div class="tech_item m-top-10">
+                                    <img src="http://localhost/dreamx/an-component/media/upload-gambar-pendukung/nodejs_tech.png" alt="" />
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-4 col-xs-6">
-                                <div class="brand_item sm-m-top-20">
-                                    <img src="assets/images/cbrand-img2.png" alt="" />
+                                <div class="tech_item m-top-10">
+                                    <img src="http://localhost/dreamx/an-component/media/upload-gambar-pendukung/saas_tech.png" alt="" />
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-4 col-xs-6">
-                                <div class="brand_item sm-m-top-20">
-                                    <img src="assets/images/cbrand-img3.png" alt="" />
+                                <div class="tech_item m-top-10">
+                                    <img src="http://localhost/dreamx/an-component/media/upload-gambar-pendukung/aws_tech.png" alt="" />
                                 </div>
                             </div>
-                            <div class="col-md-2 col-sm-4 col-xs-6">
-                                <div class="brand_item sm-m-top-20">
-                                    <img src="assets/images/cbrand-img4.png" alt="" />
+                            <div class="col-md-2 ">
+                                <div class="tech_item m-top-10">
+                                    <img src="http://localhost/dreamx/an-component/media/upload-gambar-pendukung/mysql_tech.png" alt="" />
                                 </div>
                             </div>
-                            <div class="col-md-2 col-sm-4 col-xs-6">
-                                <div class="brand_item sm-m-top-20">
-                                    <img src="assets/images/cbrand-img5.png" alt="" />
+                            <div class="col-md-2 ">
+                                <div class="tech_item m-top-10">
+                                    <img src="http://localhost/dreamx/an-component/media/upload-gambar-pendukung/google_partner.png" alt="" />
                                 </div>
                             </div>
-                            <div class="col-md-2 col-sm-4 col-xs-6">
-                                <div class="brand_item sm-m-top-20">
-                                    <img src="assets/images/cbrand-img6.png" alt="" />
+                            <div class="col-md-2 ">
+                                <div class="tech_item m-top-10">
+                                    <img src="http://localhost/dreamx/an-component/media/upload-gambar-pendukung/jquery.png" alt="" />
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+<!--Business Section-->
+            <!-- <section id="reason" class="reason lightbg roomy-40">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_reason">
+                  
+                            
+                            <div class="col-md-12">
+                                <div class="reason_item sm-m-top-30">
+                                    <h2 class="text-uppercase"><span >8</span> Reasons Why Dreamaxtion Have to be Your Partner</h2>
+                                   <!--  <ul>
+                                        <li><i class="fa fa-arrow-circle-right"></i> Higher Purposes </li>
+                                        <li><i class="fa  fa-arrow-circle-right"></i> Customer & Quality Focuses </li>
+                                        <li><i class="fa  fa-arrow-circle-right"></i> Team Values </li>
+                                        <li><i class="fa  fa-arrow-circle-right"></i> Growth Mindset  </li>
+                                    </ul> -->
+                                    <!--  <ul >
+                                        <li><i class="fa fa-check-circle"></i>Adjust your human capital system or organization design in respond to customer, employee, market, or user needs </li>
+                                        <li><i class="fa  fa-check-circle"></i>No more scattered data or software fatigue. Easily recruit, develop, manage, and retain your people using a single Human Capital Management (HCM) System </li>
+                                        <li><i class="fa  fa-check-circle"></i>Data driven decision making by using predictive analytics to gain insight, predict trends, analyst cost, and behavior patterns.  </li>
+                                        <li><i class="fa  fa-check-circle"></i>Using statistic method to find the best person-job fit  </li>
+                                        <li><i class="fa fa-check-circle"></i>Adjust your human capital system or organization design in respond to customer, employee, market, or user needs </li>
+                                        <li><i class="fa  fa-check-circle"></i>No more scattered data or software fatigue. Easily recruit, develop, manage, and retain your people using a single Human Capital Management (HCM) System </li>
+                                        <li><i class="fa  fa-check-circle"></i>Data driven decision making by using predictive analytics to gain insight, predict trends, analyst cost, and behavior patterns.  </li>
+                                        <li><i class="fa  fa-check-circle"></i>Using statistic method to find the best person-job fit  </li>
+                                    </ul> -->
+                                    
+
+                                    
+<!-- 
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section><!-- End off Brand section -->
+            </section> --> <!-- End off Business section -->
 
 
 
@@ -456,232 +498,7 @@
 
 
 
-            <!--product section-->
-            <section id="ourteam" class="product bg-grey">
-                <div class="container">
-                    <div class="main_product roomy-80">
-                        <div class="head_title text-center fix">
-                            <h2 class="text-uppercase">Our Team  (Dream<span class="text-danger">axtioner</span>) </h2>
-                            <h5>Loremp ipsum Natus voluptatum enim quod necessitatibus quis
-                                            expedita harum provident eos obcaecati id culpa
-                                            corporis molestias</h5>
-                        </div>
-
-                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                            <!-- Indicators -->
-                            <ol class="carousel-indicators">
-                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                            </ol>
-
-                            <!-- Wrapper for slides -->
-                            <div class="carousel-inner" role="listbox">
-                                <div class="item active">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="assets/images/team-1.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/team-1.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- System Analyst</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="assets/images/team-1.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/team-1.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="assets/images/team-1.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/team-1.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="assets/images/team-1.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/team-1.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="assets/images/work-img1.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/work-img1.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="assets/images/work-img2.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/work-img2.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="assets/images/work-img3.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/work-img3.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="assets/images/work-img4.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/work-img4.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="assets/images/team-1.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/team-1.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="assets/images/team-2.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/team-2.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="assets/images/team-3.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/team-3.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div class="port_item xs-m-top-30">
-                                                    <div class="port_img">
-                                                        <img src="assets/images/team-4.jpg" alt="" />
-                                                        <div class="port_overlay text-center">
-                                                            <a href="assets/images/team-4.jpg" class="popup-img">+</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="port_caption m-top-20">
-                                                        <h5>Your Work Title</h5>
-                                                        <h6>- Graphic Design</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <!-- Controls -->
-                            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                                <i class="fa fa-angle-left" aria-hidden="true"></i>
-                                <span class="sr-only">Previous</span>
-                            </a>
-
-                            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                    </div><!-- End off row -->
-                </div><!-- End off container -->
-            </section><!-- End off Product section -->
+            
 
 
 
@@ -740,7 +557,7 @@
 
 
             <!--Brand Section-->
-            <section id="brand" class="brand fix roomy-40">
+            <!-- <section id="brand" class="brand fix roomy-40">
                 <div class="container">
                     <div class="row">
                    
@@ -781,4 +598,5 @@
                         </div>
                     </div>
                 </div>
-            </section><!-- End off Brand section -->
+            </section> --><!-- End off Brand section -->
+

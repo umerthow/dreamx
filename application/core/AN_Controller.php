@@ -19,7 +19,8 @@ class AN_Apricot extends CI_Controller{
 	protected $recaptcha;
 	protected $google_analytics;
 	protected $disqus;
-
+	protected $section1;
+	protected $section4;
 
 
 	protected $public_data=array();
@@ -58,6 +59,10 @@ class AN_Apricot extends CI_Controller{
 	 $this->artikel_populer= $this->artikel->artikel_populer($this->system_info['max_populer_artikel']);
 	 $this->artikel_headline = $this->artikel->artikel_headline($this->system_info["max_headline_artikel"]);
 	
+
+	 $this->load->library("section");
+	 $this->section1= $this->section->get_section1();
+	 $this->section4= $this->section->get_section4();
 
 
 
@@ -105,7 +110,8 @@ class AN_Apricot extends CI_Controller{
 			"recaptcha"=>$this->recaptcha,
 			"google_analytics"=>$this->google_analytics,
 			"disqus"=>$this->disqus,
-			"artikel_headline"=>$this->artikel_headline
+			"artikel_headline"=>$this->artikel_headline,
+			"section1"=>$this->section1
 	 	);
 
 	 $this->public_data["informasi"]["author"]=$this->biodata["nama"];

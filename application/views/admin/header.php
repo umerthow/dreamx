@@ -66,7 +66,7 @@ $levela=($user_level=='1')?"Super Admin":"Admin";
         <!-- Logo -->
         <a href="indexoo.html" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini">A<span style='color:#b30101'><b>KSI</b></span></span>
+          <span class="logo-mini">D<span style='color:#b30101'><b>MX</b></span></span>
           <!-- logo for regular state and mobile devices -->
           <span class="logo-lg">Admin <span style='color:#b30101'><b>DMX</b></span></span>
         </a>
@@ -195,11 +195,12 @@ $levela=($user_level=='1')?"Super Admin":"Admin";
             </li>
 
             <?php if($user_level=='1'){ ?>
-            <li class='treeview <?php if($npage==12 || $npage==13){ echo'active';} ?>'>
+            <li class='treeview <?php if($npage==12 || $npage==13 || $npage==31){ echo'active';} ?>'>
               <a href='#'><i class='fa fa-file-text'></i><span>Page</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class='treeview-menu'>
                 <li class="<?php if($npage==13){ echo'active';} ?>"><a href="<?php echo $burl; ?>/all_page"><i class='fa fa-circle-o'></i><span>Semua Page</span></a></li>
                 <li class="<?php if($npage==12){ echo'active';} ?>"><a href="<?php echo $burl; ?>/page"><i class='fa fa-circle-o'></i><span>Buat Page</span></a></li>
+                <li class="<?php if($npage==31){ echo'active';} ?>"><a href="<?php echo $burl; ?>/landing_page"><i class='fa fa-circle-o'></i><span>Landing Page</span></a></li>
               </ul>
             </li>
             <?php } ?>

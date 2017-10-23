@@ -11,7 +11,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
         </div>
         <!-- Default to the left -->
        
-         <p class="text-right">Copyright © <a href="http://www.keunganinklusif.co.id/admin" target='_blank'><span style="color:#000000">AKSI</span></a></strong>  - Aksi Keuangan Inklusif Indonesia 2016 | <a href=""><span style="color:#000000">Privacy Policy</a></span> </p>
+         <p class="text-right">Copyright © <a href="<?php echo site_url() ?>" target='_blank'><span style="color:#000000">Dreamaxtion</span></a></strong>  - One system across to HC cycle | <a href="/privacy"><span style="color:#000000">Privacy Policy</a></span> </p>
       </footer>
       
 
@@ -2488,11 +2488,19 @@ if($artikel_status==false){
             var deskripsisingkat=$("#deskripsi-singkat").val();
             var deskripsi=tinymce.get("deskripsi-editor").getContent();
 
+            var link_fb = $("#link-fb").val();
+            var link_insta = $("#link_insta").val();
+            var link_twitter = $("#link_twitter").val();
+            var link_linkedin = $("#link_linkedin").val();
+            var alamat = $("#alamat").val();
+            var email = $("#email").val(); 
+            var telp = $("#telp").val(); 
+
             show_proses("Mengupdate biodata...");
             $.ajax({
               type:"POST",
               url:"<?php echo base_url() ?>AN_ajax_admin/simpanbiodata",
-              data:{"nama":nama,"fotobio":fotobio,"deskripsisingkat":deskripsisingkat,"deskripsi":deskripsi,"link-fb":link_fb},
+              data:{"nama":nama,"fotobio":fotobio,"deskripsisingkat":deskripsisingkat,"deskripsi":deskripsi,"link-fb":link_fb,"link_insta":link_insta,"link_twitter":link_twitter,"link_linkedin":link_linkedin,"alamat":alamat,"email":email,"telp":telp},
               cache:false,
               success:function(a){
                   if(a=="ok"){
@@ -2584,6 +2592,106 @@ if($artikel_status==false){
               }
             });
 
+
+
+
+            <?php
+           } if($npage==31){
+           ?>
+
+
+            $(".slug-table").DataTable();
+
+            $(document).on("click",".hapus-page",function(){
+            if(!ajax_request){
+            konfirmasi("Menghapus page!","Anda yakin akan menghapus page ini?",delete_page,$(this));    
+              }   
+           });
+
+           function delete_page(_this){
+            ajax_request=true;
+            var id_page=_this.attr("id");
+            show_proses("Menghapus Page...");
+            $.ajax({
+              type:"POST",
+              url:"<?php echo base_url() ?>AN_ajax_admin/delete_landing_page",
+              data:{"id":id_page},
+              cache:false,
+              success:function(a){
+                if(a=="ok"){
+                  show_proses("Berhasil! mereload halaman...");
+                  window.location.reload();
+                } else {
+                  error_alert("Error","Internal Error<br>Error"+a);
+                  hide_proses();
+                  ajax_request=false;
+                }
+
+              },
+              error:function(a,b,c){
+                error_alert("Error","Cek koneksi anda<br>Error:"+c);
+                hide_proses();
+                ajax_request=false;
+              }
+            });
+           }
+
+
+           $(document).on("click","#save-page",function(){
+              if(!ajax_request){
+                ajax_request=true;
+              var id_page=$("#id_page").val();
+              var section=$("#section").val();
+              var isi_page=$("#isi_page").val();;
+              var judul_page=$("#judul_page").val();
+              var status_page=$("#status_page").val();
+             
+              
+                show_proses("Menyimpan Page...");
+            $.ajax({
+              type:"POST",
+              url:"<?php echo base_url() ?>AN_ajax_admin/land_page_save",
+              data:{"id":id_page,"caption_title":judul_page,"caption_item":isi_page,"status":status_page},
+              cache:false,
+              success:function(a){
+                if(a=="ok"){
+                  show_proses("Berhasil! Mereload halaman...");
+                  window.location.reload();
+                } else{
+                  if(/^[\d]+$/.test(a)){
+                    window.location.assign("<?php echo base_url(); ?>admin/land_page/"+a);
+
+                  } else {
+                    error_alert("Error","Terjadi kesalahan internal<br>Error:"+a);
+                    hide_proses();
+                    ajax_request=false;
+                  }
+                }
+
+              },
+             
+            });
+
+            }
+          });
+           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
 
            <?php
            } if($npage==13){

@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<section class="well well-sm">
           	<div class="container">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <p><?php echo $heading; ?></p>
                     </div>
                     
@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="container">
                 <div class="row">
 
-	<div class='col-md-8 left-side'>
+	<div class='col-md-12 left-side'>
 
 		<div class="artikel">
 

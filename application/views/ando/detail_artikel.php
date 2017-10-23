@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	 
 		<?php 
 
-			echo "<h3 itemprop='headline'>$artikel[judul]</h3>";
+			echo "<h2 itemprop='headline'>$artikel[judul]</h2>";
 
 			 ?>
 

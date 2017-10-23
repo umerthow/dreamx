@@ -64,7 +64,7 @@ nav.navbar.bootsnav ul.nav li.megamenu-fw > a:focus,
 nav.navbar.bootsnav ul.nav li.active > a:hover,
 nav.navbar.bootsnav ul.nav li.active > a:focus,
 nav.navbar.bootsnav ul.nav li.active > a{
-   
+     background-color: #000;
     color:#000000;
 }
 
@@ -463,6 +463,10 @@ nav.navbar.bootsnav.navbar-fixed{
     position: fixed;
     display: block;
     width: 100%;
+    margin: 0 0 0 0;
+        
+      
+       
 }
 
 nav.navbar.bootsnav.no-background{
@@ -555,13 +559,13 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
     
     nav.navbar.bootsnav li.dropdown ul.dropdown-menu > li a:hover,
     nav.navbar.bootsnav li.dropdown ul.dropdown-menu > li a:hover{
-        background-color: transparent;
+        background-color: #fff;
     }
     
     nav.navbar.bootsnav li.dropdown ul.dropdown-menu > li > a{
         padding: 10px 15px;
         border-bottom: solid 1px #eee;
-        color: #6f6f6f;
+        color: #00a885;
     }
     
     nav.navbar.bootsnav li.dropdown ul.dropdown-menu > li:last-child > a{
@@ -1301,6 +1305,7 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
         -o-transition: all 0.3s ease-in-out;
         -ms-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
+        
     }
     
     body.side-right > .wrapper{

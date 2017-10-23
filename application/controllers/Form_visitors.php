@@ -15,25 +15,25 @@ class Form_visitors extends AN_Apricot{
 
 	function contact(){
 
-		$nama=$this->input->post('nama',TRUE);
-		$namabelakang=$this->input->post('lastname',TRUE);
+		$nama=$this->input->post('name',TRUE);
+		$namabelakang='';
 		$email=$this->input->post('email',TRUE);
 
 		$phone=$this->input->post('phone',TRUE);
 		$organization=$this->input->post('organization',TRUE);
-		$position =$this->input->post('position',TRUE);
-		$subject =$this->input->post('subject',TRUE);
-		$pesan=$this->input->post('pesan',TRUE);
+		$position ='';
+		$subject ='';
+		$pesan=$this->input->post('message',TRUE);
 
-		$alamat =$this->input->post('alamat',TRUE);
+		$alamat ='';
 
-		$url=$this->input->post('url',TRUE);
+		$url='';
 
 		$tanggal=date("Y:m:d H:i:s",now());
 
 		$ip=$this->input->ip_address();
 		$this->db->insert("kontak_masuk",array("nama"=>$nama,"namabelakang"=>$namabelakang,"email"=>$email,"phone"=>$phone,
-						"organization"=>$organization,"position"=>$position,"subject"=>$subject, "pesan"=>$pesan,"tanggal"=>$tanggal,"ip"=>$ip));
+						"organization"=>$organization, "pesan"=>$pesan,"tanggal"=>$tanggal,"ip"=>$ip));
 
 
 
@@ -60,7 +60,7 @@ class Form_visitors extends AN_Apricot{
 
 
 					$this->db->insert("kontak_masuk",array("nama"=>$nama,"namabelakang"=>$namabelakang,"email"=>$email,"phone"=>$phone,
-						"organization"=>$organization,"position"=>$position,"subject"=>$subject, "pesan"=>$pesan,"tanggal"=>$tanggal,"ip"=>$ip));
+						"organization"=>$organization, "pesan"=>$pesan,"tanggal"=>$tanggal,"ip"=>$ip));
 
 
 

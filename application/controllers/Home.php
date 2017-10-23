@@ -13,7 +13,8 @@ class Home extends AN_Apricot{
 
 		//ambil banner depan
 		$this->load->library("banner_depan");
-
+		$this->load->library('section');
+		$this->load->library('biodata_web');
 		$data=$this->public_data;
 		$data["informasi"]["title"]=$this->title->home();
 		$data["informasi"]["current_page"]="home";
@@ -24,6 +25,7 @@ class Home extends AN_Apricot{
 
 
 		$data["banner_depan"]=$this->banner_depan->banner;
+		$data["biodata"]=$this->biodata_web->biodata;
 		$data["artikel_headline"]=$this->artikel->artikel_headline($this->system_info["max_headline_artikel"]);
 		$data["artikel_head12"]=$this->artikel->artikel_head12($this->system_info["max_headline_artikel"]);
 		$data["artikel_head11"]=$this->artikel->artikel_head11($this->system_info["max_headline_artikel"]);
@@ -33,8 +35,8 @@ class Home extends AN_Apricot{
 		$data["artikel_head7"]=$this->artikel->artikel_head7($this->system_info["max_headline_artikel"]);
 		$data["semua_halaman"]=$this->pages->pages_semua();
 
-
-
+		$data["section1"] = $this->section->section1;
+		$data["section4"] = $this->section->section4;
 
 	
 		$this->load->view($this->tema."/header",$data);

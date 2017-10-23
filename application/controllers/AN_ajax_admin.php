@@ -857,13 +857,25 @@ class AN_ajax_admin extends CI_Controller
 		$deskripsisingkat=changequote($this->input->post("deskripsisingkat"));
 		$deskripsi=filterquote($this->input->post("deskripsi"),"all");
 		$link_fb=changequote($this->input->post("link-fb"));
+		$link_insta = changequote($this->input->post('link_insta'));
+ 		$link_twitter = changequote($this->input->post('link_twitter'));
+		$link_linkedin = changequote($this->input->post('link_linkedin'));
+		$alamat = changequote($this->input->post('alamat'));
+		$email = changequote($this->input->post('email'));
+		$telp = changequote($this->input->post('telp'));
 
 		$query=$this->db->query("UPDATE biodata SET 
 			nama='$nama',
 			foto='$fotobio',
 			deskripsi_singkat='$deskripsisingkat',
 			deskripsi='$deskripsi',
-			link_fb='$link_fb'
+			link_fb='$link_fb',
+			link_insta = '$link_insta',
+			link_twitter = '$link_twitter',
+			link_linkedin = '$link_linkedin',
+			alamat = '$alamat',
+			email = '$email',
+			telp = '$telp'
 			WHERE id=1
 			");
 
@@ -872,6 +884,9 @@ class AN_ajax_admin extends CI_Controller
 		}
 
 	}
+
+
+
 
 	function page(){
 		if($this->session->userdata("level_user")==1){
@@ -916,6 +931,40 @@ class AN_ajax_admin extends CI_Controller
 			}
 
 		}
+	}
+
+
+	function land_page_save(){
+
+		if($this->session->userdata("level_user")==1){
+			$judul=changequote($this->input->post("caption_title"));
+			$id=changequote($this->input->post("id"));
+			$isi=filterquote($this->input->post("caption_item"),"all");
+			$status=changequote($this->input->post("status"));
+			$time=date("Y:m:d H:i:s",now());
+
+
+			if($id==0){
+				// "baru";
+				$query=$this->db->query("INSERT INTO tsection_item (id_section,caption_title,caption_item,status,date_time) VALUES ('$id','$judul','$isi','$status','$time')");
+				echo $this->db->insert_id();
+
+
+			} else {
+				// "update";
+				$query=$this->db->query("UPDATE tsection_item SET 
+					caption_title='$judul',
+					caption_item='$isi',
+					status='$status',
+					date_time='$time'
+					WHERE id='$id'
+				 ");
+
+				echo "ok";
+			}
+
+		}
+
 	}
 
 

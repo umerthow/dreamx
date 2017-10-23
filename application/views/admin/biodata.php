@@ -37,8 +37,41 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
               </div>
 
               <div class="form-group">
+                <label for="nama-bio">Email</label>
+                <input type="email" class="form-control" id="email" value="<?php echo $data['email'] ?>" />
+              </div>
+
+              <div class="form-group">
+                <label for="nama-bio">Telp / HP</label>
+                <input type="text" class="form-control" id="telp" value="<?php echo $data['telp'] ?>" />
+              </div>
+
+              <div class="form-group">
+                <label for="deskripsi-singkat">Alamat</label>
+                <textarea class="form-control" id="alamat"><?php echo $data['alamat'] ?></textarea>
+              </div>
+
+              <div class="form-group">
                 <label for="link-fb">Alamat Facebook</label>
                 <input type="text" class="form-control" id="link-fb" value="<?php echo $data['link_fb'] ?>" />
+
+              </div>
+
+              <div class="form-group">
+                <label for="link-fb">Alamat Twitter</label>
+                <input type="text" class="form-control" id="link_twitter" value="<?php echo $data['link_twitter'] ?>" />
+
+              </div>
+              
+              <div class="form-group">
+                <label for="link-fb">Alamat Instagram</label>
+                <input type="text" class="form-control" id="link_insta" value="<?php echo $data['link_insta'] ?>" />
+
+              </div>
+
+              <div class="form-group">
+                <label for="link-fb">Alamat Linkedin</label>
+                <input type="text" class="form-control" id="link_linkedin" value="<?php echo $data['link_linkedin'] ?>" />
 
               </div>
 

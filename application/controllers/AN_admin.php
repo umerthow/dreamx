@@ -453,6 +453,45 @@ class AN_admin extends CI_Controller {
 
 
 
+	function land_page($id=0){
+		$id=abs($id);
+		if(!$this->login){
+			redirect("admin/login");
+		}
+		else {
+			if($this->level_user==1){
+			$this->load->model("admin/page","halaman");
+
+			if(!$this->halaman->get_land_page($id)){
+				show_404();
+			} else {
+				$this->halaman->get_land_page($id);
+			$data=array(
+				'avatar'=>$this->avatar_user,
+				'path_avatar'=>base_url()."an-component/media/upload-user-avatar/".$this->avatar_user,
+				'title'=>($id==0)?"Page Baru":"Edit Landing Page",
+				'user'=>$this->name_user,
+				'user_level'=>$this->level_user,
+				'npage'=>31,
+				'burl'=>base_url()."admin",
+				'id_user'=>$this->id_user,
+				'data'=>$this->halaman->hasil
+				);
+			$this->load->view('admin/header',$data);
+			$this->load->view('admin/edit_land_page',$data);
+			$this->load->view('admin/footer',$data);
+
+
+			}
+
+			} else {
+				show_404();
+			}
+		}		
+	}
+
+
+
 
 
 	function all_page(){
@@ -483,6 +522,41 @@ class AN_admin extends CI_Controller {
 			}
 		}		
 	}
+
+
+	function landing_page(){
+		if(!$this->login){
+			redirect("admin/login");
+		} else {
+			if($this->level_user==1){
+			$this->load->model("admin/all_page","all_halaman");
+			$this->all_halaman->landing_page();
+			$data=array(
+				'avatar'=>$this->avatar_user,
+				'path_avatar'=>base_url()."an-component/media/upload-user-avatar/".$this->avatar_user,
+				'title'=>"Landing Page",
+				'user'=>$this->name_user,
+				'user_level'=>$this->level_user,
+				'npage'=>31,
+				'burl'=>base_url()."admin",
+				'id_user'=>$this->id_user,
+				'hasil'=>$this->all_halaman->hasil,
+				);			
+
+			$this->load->view('admin/header',$data);
+			$this->load->view('admin/landing_page',$data);
+			$this->load->view('admin/footer',$data);				
+
+			} else {
+				show_404();
+			}
+		}		
+	}
+
+
+
+
+
 
 
 

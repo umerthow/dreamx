@@ -9,7 +9,7 @@ $path_adm=base_url()."an-theme/admin";
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Adminnistrator Aksi Indonesia | Log in</title>
+     <title>Dreamaxtion Admin | Log in</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
     <link href="<?php echo $path_adm; ?>/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -30,7 +30,7 @@ $path_adm=base_url()."an-theme/admin";
   <body class="login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href="<?php echo base_url() ?>" target='_blank'><span style="color:#b30101">AKSI</span> <span style="color:#00c0ef"><b style="color">Administrator</b></span></a>
+        <a href="<?php echo base_url() ?>" target='_blank'><span style="color:#b30101">Dreamaxtion</span> <span style="color:#00c0ef"><b style="color">Admin</b></span></a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
         <p class="login-box-msg">Silahkan Login</p>
